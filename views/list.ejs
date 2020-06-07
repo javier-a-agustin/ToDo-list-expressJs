@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do list!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="header">
+        <% if (day === "Sabado" || day === "Domingo") { %>
+            <h1 class="text-header" style="color: purple;">ToDo list!</h1>
+            <h1 class="text-header" style="color: purple;"><%= day %></h1>
+        <% } else { %>
+            <h1 class="text-header" style="color: blue;">ToDo list!</h1>
+            <h1 class="text-header" style="color: blue;"><%= day %></h1>
+        <% } %>
+    </div>
+       
+
+    <div class="content">
+        <% for(var i=0; i < items.length; i++) {%>
+            <div class="div-item">
+                <input type="checkbox">
+                <p class="text p"> <%= items[i] %> </p>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="form">
+        <form class="form-content" action="/" method="POST">
+            <input  class="input" type="text" name="newItem" placeholder="New item">
+            <div class="boton-content">
+                <button class="boton" type="submit" name="button">Add</button>
+                <input class="boton" type="submit" value="Delete" name="Delete"/>
+            </div>
+        </form>
+    </div>
+    
+
+    <div class="footer">
+        <p class="footer-text">2020 Javier Fernandez</p>
+    </div>
+
+
+</body>
+</html>
